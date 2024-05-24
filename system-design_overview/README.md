@@ -201,6 +201,17 @@ You need to analyse the design to fufil the non functional requirements.
 #### 7. Identifying and resolving bottlenecks
 lastly you should identify the bottlenecks in your system design and discuss the solutions to resolve them with the interviewer.
 
+Examples include 
+* Can the system fail in any scenario? If yes, how will you handle it?
+* How do you monitor the performance of the system and issues in the system?
+* Do you have enough replicas of the database to handle the failure
+* How do you handle the failure of the database?
+* How do you handle the failure of the server?
+
+## Sample System Design Interview Questions and Solutions
+### 1. How would you design a URL Shortening service similar to TinyURL?
+
+
 
 
 
