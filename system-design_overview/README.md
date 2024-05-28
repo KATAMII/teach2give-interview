@@ -244,6 +244,17 @@ The Web crawlers allow to extract the information from different web pages.
 6. Scalability: Utilize database replication for high availability, and implement data caching and load balancing for optimal performance.
 
 ### 4. How would you design the API rate limit?
+The API rate limiter allows one to make a particular number of API requests in a specified time. If the API request increases, it blocks the request for some time.
+#### Solution
+1. I would use a Redis cache to store the number of requests made by each user in the
+last 5 minutes. If the number of requests exceeds the limit, I would block the request for
+5 minutes. This will help in preventing abuse of the API and ensuring that the API is
+available for legitimate users.
+2. I would use a Redis cache to store the number of requests made by each user in the
+
+
+
+
 
 
 
