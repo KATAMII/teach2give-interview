@@ -213,9 +213,9 @@ Examples include
 #### Solution
 1. I would use the REST API to communicate with the server. The API endpoint for shortening a URL can accept a POST request with the long URL as the input and return the shortened URL in the response. Another API endpoint can be used to redirect the short URL to the original long URL when clicked.
  
-2.To handle 500 requests per second, I can implement load balancing techniques such as using a load balancer to distribute incoming traffic across multiple servers. This will help in scaling the service as needed to handle a high volume of requests.
+2. To handle 500 requests per second, I can implement load balancing techniques such as using a load balancer to distribute incoming traffic across multiple servers. This will help in scaling the service as needed to handle a high volume of requests.
 
-3.I would use a relational database to store the mapping between the long URLs and their corresponding shortened URLs. This will allow  efficiently retrieval of the original URL when a shortened URL is accessed. Since the focus is on handling 500 requests per second and not requiring horizontal scaling, a relational database should be sufficient for this purpose.
+3. I would use a relational database to store the mapping between the long URLs and their corresponding shortened URLs. This will allow  efficiently retrieval of the original URL when a shortened URL is accessed. Since the focus is on handling 500 requests per second and not requiring horizontal scaling, a relational database should be sufficient for this purpose.
 
 4. The table in the relational database can have columns to store the long URL, the shortened URL, the creation timestamp, the expiry timestamp (if URL expiration is implemented), and the number of clicks on the URL. This table structure will help in efficiently managing and tracking the URLs.
 
