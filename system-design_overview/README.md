@@ -210,6 +210,52 @@ Examples include
 
 ## Sample System Design Interview Questions and Solutions
 ### 1. How would you design a URL Shortening service similar to TinyURL?
+#### Solution
+1. I would use the REST API to communicate with the server. The API endpoint for shortening a URL can accept a POST request with the long URL as the input and return the shortened URL in the response. Another API endpoint can be used to redirect the short URL to the original long URL when clicked.
+ 
+2.To handle 500 requests per second, I can implement load balancing techniques such as using a load balancer to distribute incoming traffic across multiple servers. This will help in scaling the service as needed to handle a high volume of requests.
+
+3.I would use a relational database to store the mapping between the long URLs and their corresponding shortened URLs. This will allow  efficiently retrieval of the original URL when a shortened URL is accessed. Since the focus is on handling 500 requests per second and not requiring horizontal scaling, a relational database should be sufficient for this purpose.
+
+4. The table in the relational database can have columns to store the long URL, the shortened URL, the creation timestamp, the expiry timestamp (if URL expiration is implemented), and the number of clicks on the URL. This table structure will help in efficiently managing and tracking the URLs.
+
+5. To shorten the long URL, we can generate a unique identifier (such as a random alphanumeric string) for each shortened URL and store it in the database along with the original long URL. When a user requests a shortened URL for a long URL, we can check if the long URL already exists in the database and return the corresponding shortened URL. If not, we can generate a unique identifier, create a mapping in the database, and return the shortened URL.
+
+### 2. How would you design a Web Crawler?
+The Web crawlers allow to extract the information from different web pages.
+#### Solution
+1. I would start by defining what you want to extract and from where and  use a multi-threaded approach to crawl the web pages. Each thread can be assigned a specific domain to crawl, and the threads can communicate with each other to avoid duplicate crawling of pages. This will help in parallelizing the crawling process and improving the efficiency of the crawler.
+
+### 3. How would you design Facebook and Instagram?
+#### Solution
+1. I would start by defining the requirements of the application, such as the features it should have
+2. I would then design the database schema to store the data required by the application. This includes users relationships, posts and media metadata.
+
+3.  Chat feature: Use WebSockets for real-time messaging or integrate third-party chat apps.
+4. I would then design the API endpoints to communicate with the server. This includes
+* User authentication and authorization:Implement secure methods like OAuth or JWT tokens.
+* User profile management
+* Post creation and deletion
+* Media upload and deletion
+* Comment creation and deletion
+* Like and unlike functionality
+
+5. Use Algorithms: Sort posts based on timestamp for latest posts, and use engagement metrics for trending posts.
+6. Scalability: Utilize database replication for high availability, and implement data caching and load balancing for optimal performance.
+
+### 4. How would you design the API rate limit?
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
